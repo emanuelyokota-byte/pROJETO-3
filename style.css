@@ -1,0 +1,137 @@
+/* Configurações Gerais da Seção */
+.secao-robotica {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121214;
+    color: #e1e1e6;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container-robotica {
+    max-width: 1100px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+/* Estilização do Texto */
+.tag-projeto {
+    color: #00adb5;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.conteudo-texto h2 {
+    font-size: 2.5rem;
+    margin: 10px 0 20px 0;
+    color: #ffffff;
+}
+
+.conteudo-texto p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #a8a8b3;
+    margin-bottom: 20px;
+}
+
+.conteudo-texto strong {
+    color: #00adb5;
+}
+
+/* Lista de Componentes */
+.componentes-lista h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.componentes-lista ul {
+    list-style: none;
+    padding: 0;
+}
+
+.componentes-lista li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #c4c4cc;
+}
+
+/* Área Visual e Animação do Disco */
+.conteudo-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-experimento {
+    background: #1f1f23;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    border: 1px solid #29292e;
+}
+
+/* O Disco de Newton feito com CSS conic-gradient */
+.disco-newton {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto 30px auto;
+    border: 8px solid #323238;
+    background: conic-gradient(
+        #ff0000 0deg 51deg,
+        #ff7f00 51deg 102deg,
+        #ffff00 102deg 153deg,
+        #00ff00 153deg 204deg,
+        #0000ff 204deg 255deg,
+        #4b0082 255deg 306deg,
+        #8b00ff 306deg 360deg
+    );
+}
+
+/* Animação de Rotação (Simulando o Motor DC) */
+.animate-girar {
+    animation: girarRapido 0.1s linear infinite;
+}
+
+@keyframes girarRapido {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.base-motor {
+    margin-top: 15px;
+}
+
+.status-badge {
+    background-color: #04d361;
+    color: #000000;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* Responsividade para Telas Menores (Celulares) */
+@media (max-width: 768px) {
+    .container-robotica {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .componentes-lista li {
+        justify-content: center;
+    }
+}

@@ -135,3 +135,119 @@
         justify-content: center;
     }
 }
+/* Reset básico para garantir que o cabeçalho alinhe perfeitamente */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header-ifa {
+    width: 100%;
+    background-color: #121214; /* Mantendo o tom escuro tecnológico */
+    border-bottom: 2px solid #29292e;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Garante que o menu fique sempre visível ao rolar a página */
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilo do Logo */
+.logo a {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Segoe UI', sans-serif;
+    letter-spacing: 1px;
+}
+
+.logo a span {
+    color: #00adb5; /* Cor de destaque (mesma usada na seção de robótica) */
+}
+
+/* Menu de Navegação */
+.menu-navegacao ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.menu-navegacao .nav-link {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 1rem;
+    color: #a8a8b3;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+/* Efeito de passar o mouse (Hover) */
+.menu-navegacao .nav-link:hover,
+.menu-navegacao .nav-link.ativo {
+    color: #00adb5;
+}
+
+/* Linha sutil abaixo do link ativo/hover */
+.menu-navegacao .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #00adb5;
+    transition: width 0.3s ease;
+}
+
+.menu-navegacao .nav-link:hover::after,
+.menu-navegacao .nav-link.ativo::after {
+    width: 100%;
+}
+
+/* Botão de Destaque */
+.btn-IFA {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: transparent;
+    color: #00adb5;
+    border: 2px solid #00adb5;
+    padding: 8px 18px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-IFA:hover {
+    background-color: #00adb5;
+    color: #121214;
+}
+
+/* Responsividade para Celulares */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .menu-navegacao ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .header-botao {
+        display: none; /* Oculta o botão em telas muito pequenas para poupar espaço */
+    }
+}
